@@ -50,6 +50,14 @@ export const Form = () => {
     setShowSnackbar(false);
   };
 
+  const isEmailValid = () => {
+    return /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(email) && email.length > 0;
+  };
+
+  const checkDisabled = () => {
+    return !isEmailValid() || !name.length || numberOfTravellers === 0 || budgetPerPerson === 0;
+  };
+
   return (
     <Box
       sx={{
@@ -164,9 +172,16 @@ export const Form = () => {
             />
           </Box>
         </Box>
+        {!isEmailValid() ? (
+          <Typography fontSize={theme.spacing(3)} fontWeight={700} sx={{ color: "error.dark", mb: theme.spacing(3) }}>
+            Invalid Email
+          </Typography>
+        ) : (
+          <></>
+        )}
         <Button
           buttonType="primaryContained"
-          disabled={!name.length || !email.length}
+          disabled={checkDisabled()}
           loading={formLoading}
           sx={{
             minWidth: theme.spacing(28),
