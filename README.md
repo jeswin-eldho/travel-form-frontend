@@ -1,4 +1,4 @@
-# Frontend code for travelopia test
+# Frontend code for travel form
 
 ## Steps to run project
 ### Clone github repo
