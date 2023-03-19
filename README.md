@@ -3,7 +3,7 @@
 ## Steps to run project
 ### Clone github repo
 ```
-git clone https://github.com/jeswin-eldho/travelopia-frontend.git
+git clone https://github.com/jeswin-eldho/travel-form-frontend.git
 ```
 
 ### Install require npm packages
